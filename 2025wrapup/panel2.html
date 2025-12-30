@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #1a1a1a;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .container {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(145deg, #0f3721 0%, #1a4a2e 50%, #0f3721 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            justify-content: center;
+        }
+
+        /* Decorative background elements */
+        .bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+
+        .bg-circle-1 {
+            width: 600px;
+            height: 600px;
+            background: #a6bc91;
+            top: -200px;
+            right: -200px;
+        }
+
+        .bg-circle-2 {
+            width: 400px;
+            height: 400px;
+            background: #6e7550;
+            bottom: -100px;
+            left: -100px;
+        }
+
+        .bg-circle-3 {
+            width: 300px;
+            height: 300px;
+            background: #d6e4ca;
+            bottom: 200px;
+            right: -50px;
+        }
+
+        /* Main stats grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto auto auto;
+            gap: 24px;
+            z-index: 10;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 28px;
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .stat-card.featured {
+            grid-column: span 2;
+            background: linear-gradient(135deg, #6e7550 0%, #4a5038 100%);
+            padding: 55px;
+        }
+
+        .stat-card.accent-1 {
+            background: linear-gradient(135deg, #a6bc91 0%, #8aa577 100%);
+        }
+
+        .stat-card.accent-2 {
+            background: linear-gradient(135deg, #d6e4ca 0%, #b8d1a8 100%);
+        }
+
+        .stat-card.accent-3 {
+            background: linear-gradient(135deg, #4a5a3a 0%, #3a4a2a 100%);
+        }
+
+        .stat-card.accent-4 {
+            background: linear-gradient(135deg, #2d4a35 0%, #1f3525 100%);
+        }
+
+        .stat-number {
+            font-size: 100px;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .stat-card.featured .stat-number {
+            font-size: 140px;
+        }
+
+        .stat-card.accent-1 .stat-number,
+        .stat-card.accent-2 .stat-number {
+            color: #0f3721;
+        }
+
+        .stat-label {
+            font-size: 22px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.9);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-top: 8px;
+        }
+
+        .stat-card.featured .stat-label {
+            font-size: 28px;
+            letter-spacing: 5px;
+        }
+
+        .stat-card.accent-1 .stat-label,
+        .stat-card.accent-2 .stat-label {
+            color: #0f3721;
+        }
+
+        /* Bottom row with smaller stats */
+        .bottom-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            grid-column: span 2;
+        }
+
+        .mini-stat {
+            background: rgba(255,255,255,0.08);
+            border-radius: 24px;
+            padding: 35px 20px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .mini-stat .stat-number {
+            font-size: 64px;
+        }
+
+        .mini-stat .stat-label {
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+
+        /* Decorative elements */
+        .sparkle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #a6bc91;
+            border-radius: 50%;
+            opacity: 0.6;
+        }
+
+        .sparkle:nth-child(1) { top: 15%; left: 10%; }
+        .sparkle:nth-child(2) { top: 25%; right: 15%; width: 12px; height: 12px; }
+        .sparkle:nth-child(3) { bottom: 30%; left: 8%; width: 6px; height: 6px; }
+        .sparkle:nth-child(4) { bottom: 15%; right: 10%; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Background decorations -->
+        <div class="bg-circle bg-circle-1"></div>
+        <div class="bg-circle bg-circle-2"></div>
+        <div class="bg-circle bg-circle-3"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <!-- Featured stat -->
+            <div class="stat-card featured">
+                <div class="stat-number">450</div>
+                <div class="stat-label">Active Members</div>
+            </div>
+
+            <!-- Tutors and Students -->
+            <div class="stat-card accent-1">
+                <div class="stat-number">225</div>
+                <div class="stat-label">Tutors</div>
+            </div>
+            <div class="stat-card accent-2">
+                <div class="stat-number">225</div>
+                <div class="stat-label">Students</div>
+            </div>
+
+            <!-- Concurrent and Hours -->
+            <div class="stat-card accent-3">
+                <div class="stat-number">160</div>
+                <div class="stat-label">Concurrent Members</div>
+            </div>
+            <div class="stat-card accent-4">
+                <div class="stat-number">191</div>
+                <div class="stat-label">Hours Taught</div>
+            </div>
+
+            <!-- Bottom row -->
+            <div class="bottom-stats">
+                <div class="mini-stat">
+                    <div class="stat-number">80</div>
+                    <div class="stat-label">Countries</div>
+                </div>
+                <div class="mini-stat">
+                    <div class="stat-number">10</div>
+                    <div class="stat-label">UWC Schools</div>
+                </div>
+                <div class="mini-stat">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Impact</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
