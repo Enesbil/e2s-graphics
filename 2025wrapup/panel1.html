@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #1a1a1a;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .container {
+            width: 1080px;
+            height: 1080px;
+            background: #0f3721;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+            margin: 0;
+        }
+        .hdr {margin-top: 30px;
+            text-align: center;
+        }
+
+        .logo {
+            width: 500px;
+            height: auto;
+            margin: 0 auto;
+            }
+
+        .year-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 120px;
+            font-weight: 800;
+            color: #fefce9;
+            letter-spacing: 6px;
+            margin-top: 25px;
+            margin-bottom: 59px;
+        }
+
+        .photo-circle {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 5px solid #a7be91;
+        }
+
+        .photo-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center top;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hdr">
+            <img src="E2S_FANCY.png" alt="English2Success Logo" class="logo">
+            <div class="year-text">2025 WRAP-UP</div>
+        </div>  
+        <div class="photo-circle">
+            <img src="DSC08540.JPG" alt="Tutoring session">
+        </div>
+    </div>
+</body>
+</html>
